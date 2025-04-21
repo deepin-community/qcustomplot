@@ -1,0 +1,9 @@
+Document: qcustomplot-documentation
+Title: QCustomPlot Documentation
+Author: Emanuel Eichhammer
+Abstract: This documentation is especially helpful as a reference, when you're familiar with the basic concept of how to use QCustomPlot and you wish to learn more about specific functionality. See the class overview for diagrams explaining the relationships between the most important classes of the QCustomPlot library.
+Section: Science/Mathematics
+
+Format: HTML
+Index: /usr/share/doc/libqcustomplot-dev/html/index.html
+Files: /usr/share/doc/libqcustomplot-dev/html/*

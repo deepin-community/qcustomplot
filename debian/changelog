@@ -1,5 +1,182 @@
-template-repository (1.0-1) unstable; urgency=medium
+qcustomplot (2.1.0+dfsg1-3.1) unstable; urgency=medium
 
-  * Initial release
+  * Non-maintainer upload.
 
- -- Tsic404 <liuheng@deepin.org>  Sat, 28 Jan 2023 13:46:49 +0800
+  [ Filippo Rusconi ]
+  * Update tests with the QCustomPlot::QCustomPlot formalism for the
+    target_link_libraries call. (Closes: #1025777)
+
+  [ Christoph Berg ]
+  * Ignore compiler warning on stderr in buildtest-text test.
+
+ -- Christoph Berg <myon@debian.org>  Sat, 10 Dec 2022 18:23:27 +0100
+
+qcustomplot (2.1.0+dfsg1-3) unstable; urgency=low
+
+  * Fix the autopkgtest by fixing the dependencies of libqcustomplot-dev: when
+    that package is installed (not built), the qtbase5-dev and qt6-base-dev
+    packages need to be installed.
+
+ -- Filippo Rusconi <lopippo@debian.org>  Fri, 25 Nov 2022 11:01:09 +0100
+
+qcustomplot (2.1.0+dfsg1-2) unstable; urgency=low
+
+  * Same package as -1 but this time for unstable.
+
+ -- Filippo Rusconi <lopippo@debian.org>  Tue, 22 Nov 2022 21:18:56 +0100
+
+qcustomplot (2.1.0+dfsg1-1) experimental; urgency=low
+
+  [ Filippo Rusconi ]
+
+  * The following is in concertation with 
+    Anton Gladky <gladk@debian.org>.
+
+  * New upstream version 2.1.0;
+  * Package refactoring to modernize the CMake-based
+    build system;
+  * Create packages built against Qt5 or Qt6.
+  * Add myself as uploader.
+  * Upload to experimental for starting a transition.
+
+ -- Filippo Rusconi <lopippo@debian.org>  Wed, 21 Sep 2022 15:10:42 +0200
+
+qcustomplot (2.0.1+dfsg1-6) unstable; urgency=medium
+
+  * Team upload.
+  * [b0ea7bf] Fix Multiarch hinter issues
+  * [838e6f1] Bump Standards-Version to 4.6.1
+  * [d62c34f] Fix d/watch
+
+ -- Timo Röhling <roehling@debian.org>  Fri, 03 Jun 2022 12:32:24 +0200
+
+qcustomplot (2.0.1+dfsg1-5) unstable; urgency=medium
+
+  * Team upload.
+  * [51201ca] Fix autopkgtest regression with CMake 3.19+
+
+ -- Timo Röhling <roehling@debian.org>  Thu, 16 Sep 2021 19:44:21 +0200
+
+qcustomplot (2.0.1+dfsg1-4) unstable; urgency=medium
+
+  * [f8cd577] Replace deprecated pageRect(). (Closes: #976062)
+  * [663e67b] Wrap long lines in changelog entries: 2.0.1+dfsg1-3.
+  * [fe2688d] Update watch file format version to 4.
+
+ -- Anton Gladky <gladk@debian.org>  Sun, 29 Nov 2020 14:11:31 +0100
+
+qcustomplot (2.0.1+dfsg1-3) unstable; urgency=medium
+
+  [ Anton Gladky ]
+  * [0eda999] Update autopkgtests. (Closes: #973539)
+  * [8dfed02] Convert patches to gbp pq
+  * [e14754c] Wrap long lines in changelog entries: 2.0.1+dfsg1-2.
+  * [2070ece] Apply cme fix dpkg
+  * [16bc3e6] Refresh cmakelist-patch
+
+  [ Dmitry Shachnev ]
+  * [15f9a6a] Fix Qt 5.15 deprecation warnings
+  * [148cdec] Update debian/libqcustomplot-doc.doc-base to fix broken
+    references.
+
+ -- Anton Gladky <gladk@debian.org>  Tue, 03 Nov 2020 21:41:27 +0100
+
+qcustomplot (2.0.1+dfsg1-2) unstable; urgency=medium
+
+  [ Anton Gladky ]
+  * [f92a309] Trim trailing whitespace.
+  * [91a0c03] Use secure URI in Homepage field.
+  * [50c4e99] Bump debhelper from deprecated 9 to 13.
+  * [b12bb5f] Set debhelper-compat version in Build-Depends.
+  * [d9b43c1] Use canonical URL in Vcs-Browser.
+  * [3ee77ff] Drop unnecessary dh arguments: --parallel
+  * [3e86a9e] Update standards version to 4.5.0, no changes needed.
+  * [c107d28] Add Rules-Requires-Root: no
+  * [dc969f3] .gitlab-ci.yml
+
+  [ Dmitry Shachnev ]
+  * [c5966e3] Use QElapsedTimer instead of deprecated QTime::elapsed().
+    (Closes: #961133)
+
+ -- Anton Gladky <gladk@debian.org>  Mon, 01 Jun 2020 12:32:40 +0200
+
+qcustomplot (2.0.1+dfsg1-1) unstable; urgency=medium
+
+  * Upload into unstable. (Closes: #907771)
+
+ -- Anton Gladky <gladk@debian.org>  Tue, 02 Oct 2018 20:43:15 +0200
+
+qcustomplot (2.0.1+dfsg1-1~exp1) experimental; urgency=medium
+
+  [ Filippo Rusconi ]
+  * Update 01_Add_CMakeLists.patch.
+  * vcs-field-uses-insecure-uri lintian info fixed.
+  * Bump Standards-Version: 4.1.3. No changes required.
+
+  [ Anton Gladky ]
+  * [45abfeb] Minor update in d/copyright
+  * [3d5a8d8] New upstream version 2.0.1+dfsg1
+  * [dc51421] Update patch
+  * [93b9b05] Apply cme fix dpkg
+  * [1e3a698] Add some more autopkgtests
+
+ -- Anton Gladky <gladk@debian.org>  Thu, 16 Aug 2018 22:08:21 +0200
+
+qcustomplot (1.3.2+dfsg1-1) unstable; urgency=medium
+
+  * [38baad9] Add +dfsg-suffix to d/watch.
+  * [faf1882] Move cmake-files into usr/lib/cmake/QCustomplot.
+  * [730634b] Remove dbg-package.
+  * [6177ca7] Imported Upstream version 1.3.2+dfsg1
+
+ -- Anton Gladky <gladk@debian.org>  Wed, 13 Jan 2016 10:49:40 +0100
+
+qcustomplot (1.3.1+dfsg1-1) unstable; urgency=medium
+
+  * [6791430] Add d/watch file.
+  * [76725bc] Update d/copyright.
+  * [87ecba1] Imported Upstream version 1.3.1+dfsg1
+  * [3a31585] Update patch.
+  * [5088042] Update so-number.
+  * [40cdbc9] Install cmake-file for cmake-3.2. (Closes: #784769)
+  * [e0cbdf6] Apply cme fix dpkg-control.
+
+ -- Anton Gladky <gladk@debian.org>  Sun, 24 May 2015 20:51:32 +0200
+
+qcustomplot (1.2.1-3) unstable; urgency=medium
+
+  * [03b7195] Provide symlink for FindQCustomPlot.cmake for cmake-3.0.
+              (Closes: #758549)
+  * [35fbc00] Bump Standards-Version: 3.9.6. No changes.
+
+ -- Anton Gladky <gladk@debian.org>  Tue, 23 Sep 2014 23:11:09 +0200
+
+qcustomplot (1.2.1-2) unstable; urgency=medium
+
+  * [5d06478] Replace qt5-default by qtbase5-dev in depends. (Closes: #756110)
+
+ -- Anton Gladky <gladk@debian.org>  Sat, 26 Jul 2014 15:39:54 +0200
+
+qcustomplot (1.2.1-1) unstable; urgency=medium
+
+  * [95aa0fd] Imported Upstream version 1.2.1. (Closes: #753211)
+  * [334dfb7] Use wrap and sort.
+  * [2f0e8f1] Add autopkgtest.
+
+ -- Anton Gladky <gladk@debian.org>  Mon, 21 Jul 2014 23:37:07 +0200
+
+qcustomplot (1.2.0-1) unstable; urgency=medium
+
+  * [b820dfc] Imported Upstream version 1.2.0
+  * [d6daa9b] Refresh cmake-patch.
+              Use qt5 for building the library.
+  * [af0b882] Update so-number.
+  * [f1912e1] Ignore quilt dir
+
+ -- Anton Gladky <gladk@debian.org>  Thu, 03 Apr 2014 22:35:45 +0200
+
+qcustomplot (1.1.0-1) unstable; urgency=low
+
+  * Initial packaging. (Closes: #729075).
+
+ -- Anton Gladky <gladk@debian.org>  Fri, 08 Nov 2013 18:12:34 +0100

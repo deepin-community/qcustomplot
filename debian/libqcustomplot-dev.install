@@ -1,0 +1,11 @@
+usr/include
+
+# Qt5
+usr/lib/*/cmake/QCustomPlot/*
+usr/lib/*/libQCustomPlot.so
+
+# Qt6
+usr/lib/*/cmake/QCustomPlotQt6/*
+usr/lib/*/libQCustomPlotQt6.so
+
+

@@ -1,4 +1,34 @@
 #!/usr/bin/make -f
+# -*- makefile -*-
+
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+DPKG_EXPORT_BUILDFLAGS = 1
+include /usr/share/dpkg/buildflags.mk
+
+CFLAGS+=$(CPPFLAGS)
+CXXFLAGS+=$(CPPFLAGS)
+
+CMAKE_ARGS = -DBUILD_SHARED_LIBS=ON
 
 %:
-	dh $@
+	dh $@ --buildsystem=cmake
+
+execute_after_dh_auto_clean:
+	rm -rf build-qt5
+	rm -rf build-qt6
+
+override_dh_auto_configure:
+	dh_auto_configure --builddirectory=build-qt5 -- $(CMAKE_ARGS) -DUSE_QT_VERSION=5
+	dh_auto_configure --builddirectory=build-qt6 -- $(CMAKE_ARGS) -DUSE_QT_VERSION=6
+
+override_dh_auto_build:
+	dh_auto_build --builddirectory=build-qt5
+	dh_auto_build --builddirectory=build-qt6
+
+override_dh_auto_install:
+	dh_auto_install --builddirectory=build-qt5
+	dh_auto_install --builddirectory=build-qt6
+
+override_dh_auto_test:
+	dh_auto_test --no-parallel --builddirectory=build-qt5
+	dh_auto_test --no-parallel --builddirectory=build-qt6
